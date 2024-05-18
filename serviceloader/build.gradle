@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    compileOnly project(':serviceprovider')
+}
+
+group = 'com.lzx.spi'
+version = '0.0.2'
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'serviceloader'
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = uri('../repo')
+        }
+    }
+}
+

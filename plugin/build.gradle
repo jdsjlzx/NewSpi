@@ -1,0 +1,57 @@
+plugins {
+    id 'java-gradle-plugin' // Java Gradle Plugin,会自动引入id 'java-library'
+    id 'maven-publish'
+}
+
+dependencies {
+
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:7.4.2'
+    implementation 'org.ow2.asm:asm:9.7'
+    implementation 'org.ow2.asm:asm-tree:9.7'
+
+    implementation libs.serviceloader
+}
+
+//参考：https://blog.csdn.net/EthanCo/article/details/135605620
+
+//注意：如果你配置完成后，gradle的task没有publish这个任务，不要着急，有时候mac电脑就会出现这种情况，换成window电脑马上就有了
+
+gradlePlugin {
+    plugins {
+
+        //配置输出产物（第一种方式）
+        create("MySpiPlugin") {
+            //插件id
+            id = 'com.lzx.spi.spi-plugin'
+            //插件的包名+类名
+            implementationClass = 'com.baidu.spi.SpiPlugin'
+        }
+
+    }
+}
+
+println("原本的version:" + version)
+println("原本的group:" + group)
+
+//设置group
+///group = 'com.lzx.group'
+//设置版本号
+version = "1.0.1"
+
+println("设置后的group:" + group)
+println("设置后的version:" + version)
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                url = uri('../repo')//当前根目录下的repo文件夹
+                //url = uri("${rootProject.rootDir}/maven/plugin")  D:\git_project\Spi/maven/plugin
+            }
+        }
+    }
+}
+
+

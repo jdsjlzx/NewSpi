@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "Spi",
+    "module": "plugin",
+    "version": "1.0.7",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "plugin-1.0.7.jar",
+          "url": "plugin-1.0.7.jar",
+          "size": 17147,
+          "sha512": "9c28399b152cdbe61492bdfc523c1b2e8bf715676f5c1845caa2b6bb1fa50495710857e985ece844a618f4cef894b5663b3f96844356baf72e8e6f7dc44e3ed2",
+          "sha256": "22d6be3976760cba3b8bf8eb43ca4b8a0a28c20b5177310ec82ea8770507f226",
+          "sha1": "dfac0ece0d5d639d120a4d7da0e5c3f38174e7b0",
+          "md5": "be0298fe2a62f05b7f1b25855a33ac66"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "7.4.2"
+          }
+        },
+        {
+          "group": "org.ow2.asm",
+          "module": "asm",
+          "version": {
+            "requires": "9.7"
+          }
+        },
+        {
+          "group": "org.ow2.asm",
+          "module": "asm-tree",
+          "version": {
+            "requires": "9.7"
+          }
+        },
+        {
+          "group": "com.lzx.spi",
+          "module": "serviceloader",
+          "version": {
+            "requires": "0.0.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "plugin-1.0.7.jar",
+          "url": "plugin-1.0.7.jar",
+          "size": 17147,
+          "sha512": "9c28399b152cdbe61492bdfc523c1b2e8bf715676f5c1845caa2b6bb1fa50495710857e985ece844a618f4cef894b5663b3f96844356baf72e8e6f7dc44e3ed2",
+          "sha256": "22d6be3976760cba3b8bf8eb43ca4b8a0a28c20b5177310ec82ea8770507f226",
+          "sha1": "dfac0ece0d5d639d120a4d7da0e5c3f38174e7b0",
+          "md5": "be0298fe2a62f05b7f1b25855a33ac66"
+        }
+      ]
+    }
+  ]
+}

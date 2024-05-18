@@ -1,0 +1,43 @@
+pluginManagement {
+    repositories {
+        maven {
+            url './repo'
+        }
+        maven { url 'https://maven.aliyun.com/repository/google' } // google
+        maven { url 'https://maven.aliyun.com/repository/public' } // central & jcenter
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven/' }
+
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+
+
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        maven {
+            url './repo'
+        }
+        maven { url 'https://maven.aliyun.com/repository/google' } // google
+        maven { url 'https://maven.aliyun.com/repository/public' } // central & jcenter
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+        maven { url 'https://repo.huaweicloud.com/repository/maven/' }
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Spi"
+include ':app'
+include ':plugin'
+include ':serviceprovider'
+include ':serviceloader'
